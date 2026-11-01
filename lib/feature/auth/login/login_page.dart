@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:soor_app/core/const/assets_manager.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
 import 'package:soor_app/core/widgets/custom_auth_row.dart';
 import 'package:soor_app/core/widgets/custom_btn.dart';
-import 'package:soor_app/core/widgets/custom_text_field.dart';
 import 'package:soor_app/feature/auth/login/widget/custom_app_bar.dart';
-
+import 'package:soor_app/feature/auth/login/widget/login_fields.dart';
+import 'package:soor_app/feature/auth/login/widget/login_header.dart';
 import '../../../core/themes/color_manager.dart';
 
 class LoginPage extends StatelessWidget {
@@ -30,33 +29,9 @@ class LoginPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      AssetsManager.logo,
-                      fit: BoxFit.cover,
-                      width: 120.w,
-                    ),
+                 LoginHeader(),
                     24.verticalSpace,
-                    Text("Welcome back!", style: StyleManager.title),
-                    8.verticalSpace,
-                    Text(
-                      "With Soor, you're in safe hands. Log in now.",
-                      style: StyleManager.subtitle,
-                    ),
-                    24.verticalSpace,
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      spacing: 5.h,
-                      children: [
-                        Text("Phone Number", style: StyleManager.whiteText),
-                        CustomTextField(hintText: "+966 000 000 00"),
-                        16.verticalSpace,
-                        Text("Password", style: StyleManager.whiteText),
-                        CustomTextField(
-                          hintText: "*********",
-                          isObscured: true,
-                        ),
-                      ],
-                    ),
+                    LoginFields(),
                     30.verticalSpace,
                     Text("Forget Password?", style: StyleManager.yellowText),
                     20.verticalSpace,
