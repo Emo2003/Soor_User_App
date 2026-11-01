@@ -5,9 +5,9 @@ import 'package:soor_app/core/themes/style_manager.dart';
 import 'package:soor_app/core/widgets/custom_auth_row.dart';
 import 'package:soor_app/core/widgets/custom_btn.dart';
 import 'package:soor_app/core/widgets/custom_text_field.dart';
-import 'package:soor_app/feature/auth/widget/custom_app_bar.dart';
+import 'package:soor_app/feature/auth/login/widget/custom_app_bar.dart';
 
-import '../../core/themes/color_manager.dart';
+import '../../../core/themes/color_manager.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
