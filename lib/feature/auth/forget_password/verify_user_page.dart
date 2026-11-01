@@ -40,7 +40,9 @@ class _VerifyUserPageState extends State<VerifyUserPage> {
           ),
         ),
       );
+      return;
     }
+
     Navigator.pushNamed(context, RoutesName.resetPassword);
   }
 

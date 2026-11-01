@@ -6,11 +6,22 @@ import 'package:soor_app/core/widgets/custom_second_btn.dart';
 import 'package:soor_app/feature/auth/forget_password/widget/custom_app_bar.dart';
 import 'package:soor_app/feature/auth/forget_password/widget/reset_pass_fields.dart';
 
+import '../../../core/helper/validators.dart';
 import '../../../core/routes/routes_name.dart';
 import '../../../core/themes/color_manager.dart';
 
-class ResetPassPage extends StatelessWidget {
+class ResetPassPage extends StatefulWidget {
   const ResetPassPage({super.key});
+
+  @override
+  State<ResetPassPage> createState() => _ResetPassPageState();
+}
+
+class _ResetPassPageState extends State<ResetPassPage> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,24 +38,31 @@ class ResetPassPage extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-          child: Column(
-            children: [
-              Image.asset(AssetsManager.logo, fit: BoxFit.cover, width: 120.w),
-              20.verticalSpace,
-              Text("Reset Password", style: StyleManager.title),
-              30.verticalSpace,
-              ResetPassFields(
-                passwordController: TextEditingController(),
-                confirmPasswordController: TextEditingController(),
-              ),
-              30.verticalSpace,
-              CustomSecondBtn(
-                onPressed: () {
-                  Navigator.pushNamed(context, RoutesName.passwordChanged);
-                },
-                text: "Save",
-              ),
-            ],
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                Image.asset(AssetsManager.logo, fit: BoxFit.cover, width: 120.w),
+                20.verticalSpace,
+                Text("Reset Password", style: StyleManager.title),
+                30.verticalSpace,
+                ResetPassFields(
+                  passwordController: passwordController,
+                  confirmPasswordController: confirmPasswordController,
+                  passwordValidator: Validators.validatePassword,
+                  confirmPasswordValidator: Validators.validatePassword,
+                ),
+                30.verticalSpace,
+                CustomSecondBtn(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      Navigator.pushNamed(context, RoutesName.passwordChanged);
+                    }
+                  },
+                  text: "Save",
+                ),
+              ],
+            ),
           ),
         ),
       ),
