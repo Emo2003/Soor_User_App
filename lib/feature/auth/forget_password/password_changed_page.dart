@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:soor_app/core/routes/routes_name.dart';
+import 'package:soor_app/core/themes/color_manager.dart';
+import 'package:soor_app/core/widgets/custom_second_btn.dart';
+import 'package:soor_app/feature/auth/forget_password/widget/success_header.dart';
+
+class PasswordChangedPage extends StatelessWidget {
+  const PasswordChangedPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: ColorManager.background,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Spacer(),
+            SuccessHeader(),
+            Spacer(),
+            CustomSecondBtn(
+              onPressed: () {
+                Navigator.pushNamed(context, RoutesName.login);
+              },
+              text: "Login",
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
