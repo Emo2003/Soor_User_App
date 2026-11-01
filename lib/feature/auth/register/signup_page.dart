@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,48 +8,69 @@ import 'package:soor_app/feature/auth/register/widget/accept_service_row.dart';
 import 'package:soor_app/feature/auth/register/widget/signup_fields.dart';
 import 'package:soor_app/feature/auth/register/widget/signup_header.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
+
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorManager.background,
       body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(
-                  horizontal: 16.w,
-                  vertical: 5.h,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SignupHeader(),
-                    20.verticalSpace,
-                    SignupFields(),
-                    20.verticalSpace,
-                    AcceptServiceRow(),
-                    20.verticalSpace,
-                    CustomBtn(
-                      text: "Sign Up",
-                      onPressed: () {},
-                    ),
-                  ],
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 5.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SignupHeader(),
+                      20.verticalSpace,
+                      SignupFields(
+                        fullNameController: _nameController,
+                        phoneController: _phoneController,
+                        emailController: _emailController,
+                        passwordController: _passwordController,
+                        confirmPasswordController: _confirmPasswordController,
+                      ),
+                      15.verticalSpace,
+                      AcceptServiceRow(),
+                      15.verticalSpace,
+                      CustomBtn(text: "Sign Up", onPressed: () {
+                        if(_formKey.currentState!.validate()){
+                          // Perform sign-up logic here
+                        }
+                      }),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            CustomAuthRow(
-              text1: "Already have account?",
-              text2: "Login",
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
+              10.verticalSpace,
+              CustomAuthRow(
+                text1: "Already have account?",
+                text2: "Login",
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
