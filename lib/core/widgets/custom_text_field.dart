@@ -30,10 +30,16 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      cursorColor: ColorManager.white,
+      scrollPadding: EdgeInsets.zero,
       style: StyleManager.hintText,
       obscureText: isPasswordHidden,
       decoration: InputDecoration(
+        constraints: BoxConstraints(
+          minHeight: 37.h,
+          maxHeight: 37.h,
+        ),
         suffixIcon: widget.isObscured
             ? IconButton(
           icon: Icon(
