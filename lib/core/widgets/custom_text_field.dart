@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,11 +7,15 @@ import '../themes/style_manager.dart';
 class CustomTextField extends StatefulWidget {
   final String hintText;
   final bool isObscured;
+  final String? Function(String?)? validator;
+  final TextEditingController? controller;
 
   const CustomTextField({
     super.key,
     required this.hintText,
     this.isObscured = false,
+    required this.validator,
+    required this.controller,
   });
 
   @override
@@ -31,29 +34,27 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
+      validator: widget.validator,
       cursorColor: ColorManager.white,
       scrollPadding: EdgeInsets.zero,
       style: StyleManager.hintText,
       obscureText: isPasswordHidden,
       decoration: InputDecoration(
-        constraints: BoxConstraints(
-          minHeight: 37.h,
-          maxHeight: 37.h,
-        ),
+        contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+        constraints: BoxConstraints(maxHeight: 50.h),
         suffixIcon: widget.isObscured
             ? IconButton(
-          icon: Icon(
-            isPasswordHidden
-                ? Icons.visibility_off
-                : Icons.visibility,
-            color: ColorManager.gray,
-          ),
-          onPressed: () {
-            setState(() {
-              isPasswordHidden = !isPasswordHidden;
-            });
-          },
-        )
+                icon: Icon(
+                  isPasswordHidden ? Icons.visibility_off : Icons.visibility,
+                  color: ColorManager.gray,
+                ),
+                onPressed: () {
+                  setState(() {
+                    isPasswordHidden = !isPasswordHidden;
+                  });
+                },
+              )
             : null,
         hintText: widget.hintText,
         filled: true,
@@ -61,24 +62,24 @@ class _CustomTextFieldState extends State<CustomTextField> {
         fillColor: ColorManager.darkGray,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide(
-            color: ColorManager.mediumGray,
-            width: 1.w,
-          ),
+          borderSide: BorderSide(color: ColorManager.mediumGray, width: 1.w),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide(
-            color: ColorManager.mediumGray,
-            width: 1.w,
-          ),
+          borderSide: BorderSide(color: ColorManager.mediumGray, width: 1.w),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide(
-            color: ColorManager.mediumGray,
-            width: 1.w,
-          ),
+          borderSide: BorderSide(color: ColorManager.mediumGray, width: 1.w),
+        ),
+        errorStyle: TextStyle(color: Colors.redAccent, fontSize: 12.sp),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.r),
+          borderSide: BorderSide(color: Colors.redAccent, width: 1.w),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.r),
+          borderSide: BorderSide(color: Colors.redAccent, width: 1.w),
         ),
       ),
     );
