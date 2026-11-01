@@ -55,7 +55,11 @@ class _LoginPageState extends State<LoginPage> {
                         passwordController: _passwordController,
                       ),
                       30.verticalSpace,
-                      Text("Forget Password?", style: StyleManager.yellowText),
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, RoutesName.forgetPassword);
+                          },
+                          child: Text("Forget Password?", style: StyleManager.yellowText)),
                       20.verticalSpace,
                       CustomBtn(
                         text: "Login",
