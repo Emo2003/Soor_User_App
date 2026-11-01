@@ -6,13 +6,19 @@ import '../themes/style_manager.dart';
 class CustomAuthRow extends StatelessWidget {
   final String text1;
   final String text2;
+  final Function() onPressed;
 
-  const CustomAuthRow({super.key, required this.text1, required this.text2});
+  const CustomAuthRow({
+    super.key,
+    required this.text1,
+    required this.text2,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 30.h),
+      padding: EdgeInsets.only(bottom: 15.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -26,9 +32,14 @@ class CustomAuthRow extends StatelessWidget {
 
           5.horizontalSpace,
 
-          Text(
-           text2,
-            style: StyleManager.yellowText.copyWith(fontSize: 14.sp),
+          GestureDetector(
+            onTap: () {
+              onPressed();
+            },
+            child: Text(
+              text2,
+              style: StyleManager.yellowText.copyWith(fontSize: 14.sp),
+            ),
           ),
         ],
       ),

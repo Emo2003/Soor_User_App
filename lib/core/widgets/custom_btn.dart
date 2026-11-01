@@ -24,7 +24,7 @@ class CustomBtn extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Login",
+            text,
             style: StyleManager.whiteText.copyWith(
               fontSize: 16.sp,
               fontWeight: FontWeight.w700,

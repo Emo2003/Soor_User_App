@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:soor_app/core/routes/routes_name.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
 import 'package:soor_app/core/widgets/custom_auth_row.dart';
 import 'package:soor_app/core/widgets/custom_btn.dart';
 import 'package:soor_app/feature/auth/login/widget/custom_app_bar.dart';
 import 'package:soor_app/feature/auth/login/widget/login_fields.dart';
 import 'package:soor_app/feature/auth/login/widget/login_header.dart';
+
 import '../../../core/themes/color_manager.dart';
 
 class LoginPage extends StatelessWidget {
@@ -29,7 +31,7 @@ class LoginPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                 LoginHeader(),
+                    LoginHeader(),
                     24.verticalSpace,
                     LoginFields(),
                     30.verticalSpace,
@@ -41,7 +43,13 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
-          CustomAuthRow(text1: "Don't have an account?", text2: "Sign Up"),
+          CustomAuthRow(
+            text1: "Don't have an account?",
+            text2: "Sign Up",
+            onPressed: () {
+              Navigator.pushNamed(context, RoutesName.signUp);
+            },
+          ),
         ],
       ),
     );

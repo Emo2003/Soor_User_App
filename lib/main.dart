@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:soor_app/feature/auth/login/login_page.dart';
+import 'package:soor_app/core/routes/routes_name.dart';
+
+import 'core/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +20,8 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: const LoginPage(),
+          initialRoute: RoutesName.login,
+          onGenerateRoute: (settings) => Routes.generateRoute(settings),
         );
       },
     );
