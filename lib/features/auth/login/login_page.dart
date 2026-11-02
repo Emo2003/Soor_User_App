@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soor_app/core/helper/validators.dart';
@@ -56,16 +57,27 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       30.verticalSpace,
                       GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, RoutesName.forgetPassword);
-                          },
-                          child: Text("Forget Password?", style: StyleManager.yellowText)),
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            RoutesName.forgetPassword,
+                          );
+                        },
+                        child: Text(
+                          "Forget Password?".tr(),
+                          style: StyleManager.yellowText,
+                        ),
+                      ),
                       20.verticalSpace,
                       CustomBtn(
-                        text: "Login",
+                        text: "Login".tr(),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            // Perform login logic here
+                            Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              RoutesName.layout,
+                              (route) => false,
+                            );
                           }
                         },
                       ),
@@ -75,8 +87,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             CustomAuthRow(
-              text1: "Don't have an account?",
-              text2: "Sign Up",
+              text1: "Don't have an account?".tr(),
+              text2: "Sign Up".tr(),
               onPressed: () {
                 Navigator.pushNamed(context, RoutesName.signUp);
               },

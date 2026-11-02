@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +16,7 @@ class ForgetPassField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Phone Number", style: StyleManager.whiteText),
+        Text("Phone Number".tr(), style: StyleManager.whiteText),
         8.verticalSpace,
         CustomTextField(
           hintText: "+966 000 000 00",

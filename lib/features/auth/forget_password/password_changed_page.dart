@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soor_app/core/routes/routes_name.dart';
@@ -24,7 +25,7 @@ class PasswordChangedPage extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, RoutesName.login);
               },
-              text: "Login",
+              text: "Login".tr(),
             ),
           ],
         ),

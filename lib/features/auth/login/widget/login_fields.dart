@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soor_app/core/helper/validators.dart';
@@ -25,14 +26,14 @@ class LoginFields extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 5.h,
       children: [
-        Text("Phone Number", style: StyleManager.whiteText),
+        Text("Phone Number".tr(), style: StyleManager.whiteText),
         CustomTextField(
-          hintText: "+966 000 000 00",
+          hintText: '\u202A+966 000 000 00\u202C',
           controller: phoneController,
           validator: phoneValidator ?? Validators.validateMobile,
         ),
         16.verticalSpace,
-        Text("Password", style: StyleManager.whiteText),
+        Text("Password".tr(), style: StyleManager.whiteText),
         CustomTextField(
           hintText: "*********",
           isObscured: true,

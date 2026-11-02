@@ -10,4 +10,5 @@ static const Color background = Color(0xff000000);
   static const Color darkGray = Color(0xff212121);
   static const Color lightGray = Color(0xff878787);
   static const Color mediumGray = Color(0xff2E2E2E);
+  static const Color tabColor = Color(0xff261A00);
 }

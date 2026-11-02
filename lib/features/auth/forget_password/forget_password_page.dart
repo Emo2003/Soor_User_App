@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soor_app/core/const/assets_manager.dart';
@@ -42,7 +43,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                   width: 120.w,
                 ),
                 20.verticalSpace,
-                Text("Are you forget password ?", style: StyleManager.title),
+                Text("Are you forget password ?".tr(), style: StyleManager.title),
                 24.verticalSpace,
                 ForgetPassField(controller: controller),
                 30.verticalSpace,
@@ -50,7 +51,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                   onPressed: () {
                     Navigator.pushNamed(context, RoutesName.verifyUser);
                   },
-                  text: "Send",
+                  text: "Send".tr(),
                 ),
               ],
             ),

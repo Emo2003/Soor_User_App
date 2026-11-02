@@ -15,7 +15,9 @@ class CustomForgetAppBar extends StatelessWidget {
       leading: Container(
         width: 45.w,
         height: 45.h,
-        margin: EdgeInsets.only(left: 15.w),
+        margin: EdgeInsets.symmetric(
+          horizontal: 10.w,
+        ),
         decoration: BoxDecoration(
           color: ColorManager.darkGray,
           shape: BoxShape.circle,

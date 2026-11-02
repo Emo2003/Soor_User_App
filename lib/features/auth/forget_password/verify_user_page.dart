@@ -1,9 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:soor_app/core/routes/routes_name.dart';
 import 'package:soor_app/core/themes/color_manager.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
+import 'package:soor_app/core/widgets/custom_auth_row.dart';
 import 'package:soor_app/core/widgets/custom_second_btn.dart';
 
 import 'controller/otp_field_controller.dart';
@@ -62,7 +64,11 @@ class _VerifyUserPageState extends State<VerifyUserPage> {
               30.verticalSpace,
               OtpTimer(onResend: resendOtp),
               20.verticalSpace,
-              CustomSecondBtn(text: 'Verify', onPressed: verifyOtp),
+              CustomAuthRow(text1: "Didn't receive the code?".tr(), text2: "Resend".tr(), onPressed: (){
+
+              }),
+              30.verticalSpace,
+              CustomSecondBtn(text: 'Verify'.tr(), onPressed: verifyOtp),
             ],
           ),
         ),
