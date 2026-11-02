@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -56,7 +57,7 @@ class _SignupPageState extends State<SignupPage> {
                       AcceptServiceRow(),
                       15.verticalSpace,
                       CustomBtn(
-                        text: "Sign Up",
+                        text: "Sign Up".tr(),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             // Perform sign-up logic here
@@ -69,8 +70,8 @@ class _SignupPageState extends State<SignupPage> {
               ),
               10.verticalSpace,
               CustomAuthRow(
-                text1: "Already have account?",
-                text2: "Login",
+                text1: "Already have account?".tr(),
+                text2: "Login".tr(),
                 onPressed: () {
                   Navigator.pop(context);
                 },

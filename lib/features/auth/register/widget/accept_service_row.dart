@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soor_app/core/themes/color_manager.dart';
@@ -39,7 +40,7 @@ class _AcceptServiceRowState extends State<AcceptServiceRow> {
           child: Wrap(
             children: [
               Text(
-                "I agree to the Terms and ",
+                "I agree to the Terms and".tr(),
                 style: StyleManager.hintText.copyWith(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
@@ -48,7 +49,7 @@ class _AcceptServiceRowState extends State<AcceptServiceRow> {
               GestureDetector(
                 onTap: () {},
                 child: Text(
-                  "Privacy Policy.",
+                  "Privacy Policy.".tr(),
                   style: StyleManager.yellowText.copyWith(
                     fontSize: 14.sp,
                     decorationColor: ColorManager.yellow,

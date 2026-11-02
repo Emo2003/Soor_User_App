@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soor_app/core/const/assets_manager.dart';
@@ -44,7 +45,7 @@ class _ResetPassPageState extends State<ResetPassPage> {
               children: [
                 Image.asset(AssetsManager.logo, fit: BoxFit.cover, width: 120.w),
                 20.verticalSpace,
-                Text("Reset Password", style: StyleManager.title),
+                Text("Reset Password".tr(), style: StyleManager.title),
                 30.verticalSpace,
                 ResetPassFields(
                   passwordController: passwordController,
@@ -59,7 +60,7 @@ class _ResetPassPageState extends State<ResetPassPage> {
                       Navigator.pushNamed(context, RoutesName.passwordChanged);
                     }
                   },
-                  text: "Save",
+                  text: "Save".tr(),
                 ),
               ],
             ),

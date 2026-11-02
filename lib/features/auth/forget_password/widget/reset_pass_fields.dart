@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
@@ -22,7 +23,7 @@ class ResetPassFields extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 5.h,
       children: [
-        Text("Password", style: StyleManager.whiteText),
+        Text("Password".tr(), style: StyleManager.whiteText),
         CustomTextField(
           hintText: "********",
           validator: passwordValidator,
@@ -30,7 +31,7 @@ class ResetPassFields extends StatelessWidget {
           isObscured: true,
         ),
         30.verticalSpace,
-        Text("Confirm Password", style: StyleManager.whiteText),
+        Text("Confirm Password".tr(), style: StyleManager.whiteText),
         CustomTextField(
           hintText: "********",
           validator: confirmPasswordValidator,

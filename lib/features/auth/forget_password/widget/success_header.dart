@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,10 +16,10 @@ class SuccessHeader extends StatelessWidget {
       children: [
         Image.asset(AssetsManager.success),
         30.verticalSpace,
-        Text("Success!", style: StyleManager.title),
+        Text("Success!".tr(), style: StyleManager.title),
         10.verticalSpace,
         Text(
-          "Your password has been changed successfully.",
+          "Your password has been changed successfully.".tr(),
           style: StyleManager.subtitle,
           textAlign: TextAlign.center,
         ),

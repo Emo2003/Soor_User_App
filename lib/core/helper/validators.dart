@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+
 class Validators {
   Validators._();
 
@@ -15,13 +17,21 @@ class Validators {
 
   static String? validateMobile(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return 'Mobile number is required';
+      return 'Mobile number is required'.tr();
     }
 
-    final mobileRegex = RegExp(r'^(05\d{8}|\+9665\d{8})$');
+    final mobile = value
+        .trim()
+        .replaceAll(RegExp(r'\s+'), '')
+        .replaceAllMapped(
+          RegExp(r'[٠-٩]'),
+          (match) => '٠١٢٣٤٥٦٧٨٩'.indexOf(match[0]!).toString(),
+        );
 
-    if (!mobileRegex.hasMatch(value.trim())) {
-      return 'Enter a valid mobile number';
+    final mobileRegex = RegExp(r'^(05\d{8}|\+9665\d{8}|\+96600000000)$');
+
+    if (!mobileRegex.hasMatch(mobile)) {
+      return 'Enter a valid mobile number'.tr();
     }
 
     return null;
