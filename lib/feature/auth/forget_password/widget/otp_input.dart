@@ -5,12 +5,12 @@ import '../../../../core/themes/otp_theme.dart';
 
 class OtpInput extends StatelessWidget {
   final TextEditingController controller;
-  final ValueChanged<String>? onCompleted;
+  final void Function(String)? onCompleted;
 
   const OtpInput({
     super.key,
     required this.controller,
-    this.onCompleted,
+     this.onCompleted,
   });
 
   @override
@@ -20,8 +20,8 @@ class OtpInput extends StatelessWidget {
       controller: controller,
       defaultPinTheme: OtpTheme.defaultPinTheme,
       focusedPinTheme: OtpTheme.focusedPinTheme,
-      keyboardType: TextInputType.number,
       showCursor: true,
+      keyboardType: TextInputType.number,
       onCompleted: onCompleted,
     );
   }

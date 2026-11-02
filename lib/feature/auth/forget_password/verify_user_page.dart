@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,7 +23,7 @@ class _VerifyUserPageState extends State<VerifyUserPage> {
   final OtpController otpController = OtpController();
 
   void verifyOtp() {
-    if (!otpController.isComplete) {
+    if (!otpController.inCompleted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           backgroundColor: ColorManager.secondary,
@@ -50,9 +49,7 @@ class _VerifyUserPageState extends State<VerifyUserPage> {
       backgroundColor: ColorManager.background,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.h),
-        child: CustomForgetAppBar(
-          onPressed: () => Navigator.pop(context),
-        ),
+        child: CustomForgetAppBar(onPressed: () => Navigator.pop(context)),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
@@ -61,16 +58,11 @@ class _VerifyUserPageState extends State<VerifyUserPage> {
             children: [
               const OtpHeader(),
               30.verticalSpace,
-              OtpInput(
-                controller: otpController.textController,
-              ),
+              OtpInput(controller: otpController.textEditingController),
               30.verticalSpace,
               OtpTimer(onResend: resendOtp),
               20.verticalSpace,
-              CustomSecondBtn(
-                text: 'Verify',
-                onPressed: verifyOtp,
-              ),
+              CustomSecondBtn(text: 'Verify', onPressed: verifyOtp),
             ],
           ),
         ),
