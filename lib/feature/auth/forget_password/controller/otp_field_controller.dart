@@ -1,16 +1,14 @@
-
 import 'package:flutter/material.dart';
 
 class OtpController {
   static const int otpLength = 5;
+  final textEditingController = TextEditingController();
 
-  final textController = TextEditingController();
+  String get otp => textEditingController.text;
 
-  String get otp => textController.text;
+  bool get inCompleted => otp.length == otpLength;
 
-  bool get isComplete => otp.length == otpLength;
+  void clear() => textEditingController.clear();
 
-  void clear() => textController.clear();
-
-  void dispose() => textController.dispose();
+  void dispose() => textEditingController.dispose();
 }
