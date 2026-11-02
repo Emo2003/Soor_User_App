@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soor_app/core/const/assets_manager.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
 import 'package:soor_app/core/widgets/custom_second_btn.dart';
-import 'package:soor_app/feature/auth/forget_password/widget/custom_app_bar.dart';
-import 'package:soor_app/feature/auth/forget_password/widget/reset_pass_fields.dart';
+import 'package:soor_app/features/auth/forget_password/widget/custom_app_bar.dart';
+import 'package:soor_app/features/auth/forget_password/widget/reset_pass_fields.dart';
 
 import '../../../core/helper/validators.dart';
 import '../../../core/routes/routes_name.dart';
