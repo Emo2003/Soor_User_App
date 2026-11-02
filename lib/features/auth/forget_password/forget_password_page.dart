@@ -5,8 +5,8 @@ import 'package:soor_app/core/routes/routes_name.dart';
 import 'package:soor_app/core/themes/color_manager.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
 import 'package:soor_app/core/widgets/custom_second_btn.dart';
-import 'package:soor_app/feature/auth/forget_password/widget/custom_app_bar.dart';
-import 'package:soor_app/feature/auth/forget_password/widget/forget_pass_field.dart';
+import 'package:soor_app/features/auth/forget_password/widget/custom_app_bar.dart';
+import 'package:soor_app/features/auth/forget_password/widget/forget_pass_field.dart';
 
 class ForgetPasswordPage extends StatefulWidget {
   const ForgetPasswordPage({super.key});

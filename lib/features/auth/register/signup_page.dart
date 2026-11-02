@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soor_app/core/themes/color_manager.dart';
 import 'package:soor_app/core/widgets/custom_auth_row.dart';
 import 'package:soor_app/core/widgets/custom_btn.dart';
-import 'package:soor_app/feature/auth/register/widget/accept_service_row.dart';
-import 'package:soor_app/feature/auth/register/widget/signup_fields.dart';
-import 'package:soor_app/feature/auth/register/widget/signup_header.dart';
+import 'package:soor_app/features/auth/register/widget/accept_service_row.dart';
+import 'package:soor_app/features/auth/register/widget/signup_fields.dart';
+import 'package:soor_app/features/auth/register/widget/signup_header.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -36,7 +36,10 @@ class _SignupPageState extends State<SignupPage> {
               Expanded(
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 5.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 5.h,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -52,11 +55,14 @@ class _SignupPageState extends State<SignupPage> {
                       15.verticalSpace,
                       AcceptServiceRow(),
                       15.verticalSpace,
-                      CustomBtn(text: "Sign Up", onPressed: () {
-                        if(_formKey.currentState!.validate()){
-                          // Perform sign-up logic here
-                        }
-                      }),
+                      CustomBtn(
+                        text: "Sign Up",
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            // Perform sign-up logic here
+                          }
+                        },
+                      ),
                     ],
                   ),
                 ),

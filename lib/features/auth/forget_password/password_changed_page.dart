@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soor_app/core/routes/routes_name.dart';
 import 'package:soor_app/core/themes/color_manager.dart';
 import 'package:soor_app/core/widgets/custom_second_btn.dart';
-import 'package:soor_app/feature/auth/forget_password/widget/success_header.dart';
+import 'package:soor_app/features/auth/forget_password/widget/success_header.dart';
 
 class PasswordChangedPage extends StatelessWidget {
   const PasswordChangedPage({super.key});
