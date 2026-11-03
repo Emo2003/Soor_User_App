@@ -21,9 +21,9 @@ class ServiceContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 22.h),
-      width: 100.w,
-      height: 100.w,
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
+      width: 90.w,
+      height: 90.w,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [firstColor, secondColor.withAlpha(200)],
@@ -38,7 +38,7 @@ class ServiceContainer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(iconPath),
-            3.verticalSpace,
+            2.verticalSpace,
             Text(
               title.tr(),
               style: StyleManager.whiteText.copyWith(fontSize: 16.sp),

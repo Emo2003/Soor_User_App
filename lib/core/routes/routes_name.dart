@@ -7,4 +7,5 @@ class RoutesName {
   static const String resetPassword = 'resetPassword';
   static const String passwordChanged = 'passwordChanged';
   static const String layout = 'layout';
+  static const String services = 'services';
 }

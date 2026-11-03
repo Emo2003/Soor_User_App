@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:soor_app/core/routes/routes_name.dart';
+import 'package:soor_app/features/services/services_page.dart';
 
 import '../../features/auth/forget_password/forget_password_page.dart';
 import '../../features/auth/forget_password/password_changed_page.dart';
@@ -44,9 +45,13 @@ class Routes {
       case RoutesName.signUp:
         return MaterialPageRoute(builder: (_) => _wrapWithCanPop(SignupPage()));
 
-        case RoutesName.home:
+      case RoutesName.home:
         return MaterialPageRoute(
           builder: (_) => _wrapWithCanPop(const HomePage()),
+        );
+      case RoutesName.services:
+        return MaterialPageRoute(
+          builder: (_) => _wrapWithCanPop(const ServicesPage()),
         );
       case RoutesName.forgetPassword:
         return MaterialPageRoute(

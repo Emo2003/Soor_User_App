@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soor_app/core/routes/routes_name.dart';
-import 'package:soor_app/core/themes/color_manager.dart';
 import 'package:soor_app/core/widgets/custom_second_btn.dart';
 import 'package:soor_app/features/auth/forget_password/widget/success_header.dart';
 
@@ -12,7 +11,6 @@ class PasswordChangedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.background,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         child: Column(

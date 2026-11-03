@@ -9,7 +9,6 @@ import 'package:soor_app/features/auth/forget_password/widget/reset_pass_fields.
 
 import '../../../core/helper/validators.dart';
 import '../../../core/routes/routes_name.dart';
-import '../../../core/themes/color_manager.dart';
 
 class ResetPassPage extends StatefulWidget {
   const ResetPassPage({super.key});
@@ -27,7 +26,6 @@ class _ResetPassPageState extends State<ResetPassPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.background,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.h),
         child: CustomForgetAppBar(
