@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           debugShowCheckedModeBanner: false,
-          initialRoute: RoutesName.login,
+          initialRoute: RoutesName.layout,
           onGenerateRoute: (settings) => Routes.generateRoute(settings),
         );
       },

@@ -8,6 +8,7 @@ import '../../features/auth/forget_password/reset_pass_page.dart';
 import '../../features/auth/forget_password/verify_user_page.dart';
 import '../../features/auth/login/login_page.dart';
 import '../../features/auth/register/signup_page.dart';
+import '../../features/home/home_page.dart';
 import '../../features/layout/layout_page.dart';
 
 class Routes {
@@ -43,6 +44,10 @@ class Routes {
       case RoutesName.signUp:
         return MaterialPageRoute(builder: (_) => _wrapWithCanPop(SignupPage()));
 
+        case RoutesName.home:
+        return MaterialPageRoute(
+          builder: (_) => _wrapWithCanPop(const HomePage()),
+        );
       case RoutesName.forgetPassword:
         return MaterialPageRoute(
           builder: (_) => _wrapWithCanPop(const ForgetPasswordPage()),
