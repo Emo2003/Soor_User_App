@@ -11,6 +11,7 @@ class ServiceOrderContainer extends StatelessWidget {
   final String iconPath;
   final Color firstColor;
   final Color secondColor;
+  final VoidCallback? onPressed;
 
   const ServiceOrderContainer({
     super.key,
@@ -18,6 +19,7 @@ class ServiceOrderContainer extends StatelessWidget {
     required this.iconPath,
     required this.firstColor,
     required this.secondColor,
+    this.onPressed,
   });
 
   @override
@@ -57,7 +59,10 @@ class ServiceOrderContainer extends StatelessWidget {
               style: StyleManager.hintText.copyWith(fontSize: 14.sp),
             ),
             20.verticalSpace,
-            CustomBtn(text: "Start Now".tr(), onPressed: () {}),
+            CustomBtn(text: "Start Now".tr(), onPressed: () {
+              onPressed?.call();
+            }),
+
           ],
         ),
       ),

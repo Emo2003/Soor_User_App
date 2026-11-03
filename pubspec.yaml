@@ -38,6 +38,7 @@ dependencies:
   pinput: ^6.0.2
   easy_localization: ^3.0.8
   flutter_svg: ^2.3.2
+  go_router: ^18.1.2
 
 dev_dependencies:
   flutter_test:

@@ -54,5 +54,17 @@
   "Sara Mohamed": "Sara Mohamed",
   "Amazing experience. Highly recommended!": "Amazing experience. Highly recommended!",
   "Service Description here": "Service Description here",
-  "Start Now": "Start Now"
+  "Start Now": "Start Now",
+  "Search for location": "Search for location",
+  "Move the cursor to select the location.": "Move the cursor to select the location.",
+  "Address Coordinates on the Map": "Address Coordinates on the Map",
+  "Riyadh, Saudi Arabia": "Riyadh, Saudi Arabia",
+  "Confirm Location": "Confirm Location",
+  "Edit": "Edit",
+  "Additional Location Details": "Additional Location Details",
+  "area_name": "Area Name",
+  "house_number": "House Number",
+  "floor_number": "Floor Number",
+  "additional_address_details": "Additional Address Details",
+  "Confirm": "Confirm"
 }

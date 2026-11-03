@@ -54,5 +54,17 @@
   "Sara Mohamed": "سارة محمد",
   "Amazing experience. Highly recommended!": "تجربة رائعة، أنصح بها بشدة!",
   "Service Description here": "وصف الخدمة هنا",
-  "Start Now": "ابدأ الآن"
+  "Start Now": "ابدأ الآن",
+  "Search for location": "البحث عن موقع",
+  "Move the cursor to select the location.": "حرك المؤشر لتحديد الموقع.",
+  "Address Coordinates on the Map": "إحداثيات العنوان على الخريطة",
+  "Riyadh, Saudi Arabia": "الرياض، المملكة العربية السعودية",
+  "Confirm Location": "تأكيد الموقع",
+  "Edit": "تعديل",
+  "Additional Location Details": "بيانات إضافية للموقع",
+  "area_name": "اسم المنطقة",
+  "house_number": "رقم المنزل",
+  "floor_number": "رقم الدور",
+  "additional_address_details": "تفاصيل إضافية للعنوان",
+  "Confirm": "تأكيد"
 }
