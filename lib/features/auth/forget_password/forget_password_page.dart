@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:soor_app/core/const/assets_manager.dart';
 import 'package:soor_app/core/routes/routes_name.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
@@ -47,7 +48,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                 30.verticalSpace,
                 CustomSecondBtn(
                   onPressed: () {
-                    Navigator.pushNamed(context, RoutesName.verifyUser);
+                    context.push(RoutesName.verifyUser);
                   },
                   text: "Send".tr(),
                 ),

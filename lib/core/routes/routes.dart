@@ -1,78 +1,84 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:soor_app/core/routes/routes_name.dart';
+import 'package:go_router/go_router.dart';
+import 'package:soor_app/features/auth/forget_password/forget_password_page.dart';
+import 'package:soor_app/features/auth/forget_password/password_changed_page.dart';
+import 'package:soor_app/features/auth/forget_password/reset_pass_page.dart';
+import 'package:soor_app/features/auth/forget_password/verify_user_page.dart';
+import 'package:soor_app/features/auth/login/login_page.dart';
+import 'package:soor_app/features/auth/register/signup_page.dart';
+import 'package:soor_app/features/home/home_page.dart';
+import 'package:soor_app/features/layout/layout_page.dart';
+import 'package:soor_app/features/location/choose_location_page.dart';
+import 'package:soor_app/features/confirm_location/confirm_location_page.dart';
 import 'package:soor_app/features/services/services_page.dart';
 
-import '../../features/auth/forget_password/forget_password_page.dart';
-import '../../features/auth/forget_password/password_changed_page.dart';
-import '../../features/auth/forget_password/reset_pass_page.dart';
-import '../../features/auth/forget_password/verify_user_page.dart';
-import '../../features/auth/login/login_page.dart';
-import '../../features/auth/register/signup_page.dart';
-import '../../features/home/home_page.dart';
-import '../../features/layout/layout_page.dart';
+import 'routes_name.dart';
 
-class Routes {
-  static Widget _wrapWithCanPop(Widget page) {
-    return Builder(
-      builder: (context) {
-        final canPop = Navigator.of(context).canPop();
+class AppRouter {
+  static final GoRouter router = GoRouter(
+    initialLocation: RoutesName.layout,
 
-        return PopScope(
-          canPop: canPop,
-          onPopInvokedWithResult: (didPop, _) {
-            if (didPop) return;
+    routes: [
+      GoRoute(
+        path: RoutesName.login,
+        builder: (context, state) => const LoginPage(),
+      ),
 
-            if (!Navigator.of(context).canPop()) {
-              SystemNavigator.pop();
-            }
-          },
-          child: page,
-        );
-      },
-    );
-  }
+      GoRoute(
+        path: RoutesName.signUp,
+        builder: (context, state) => const SignupPage(),
+      ),
 
-  static Route<dynamic> generateRoute(RouteSettings settings) {
-    switch (settings.name) {
-      case RoutesName.login:
-        return MaterialPageRoute(builder: (_) => _wrapWithCanPop(LoginPage()));
+      GoRoute(
+        path: RoutesName.layout,
+        builder: (context, state) => const LayoutPage(),
+      ),
 
-      case RoutesName.layout:
-        return MaterialPageRoute(
-          builder: (_) => _wrapWithCanPop(const LayoutPage()),
-        );
-      case RoutesName.signUp:
-        return MaterialPageRoute(builder: (_) => _wrapWithCanPop(SignupPage()));
+      GoRoute(
+        path: RoutesName.home,
+        builder: (context, state) => const HomePage(),
+      ),
 
-      case RoutesName.home:
-        return MaterialPageRoute(
-          builder: (_) => _wrapWithCanPop(const HomePage()),
-        );
-      case RoutesName.services:
-        return MaterialPageRoute(
-          builder: (_) => _wrapWithCanPop(const ServicesPage()),
-        );
-      case RoutesName.forgetPassword:
-        return MaterialPageRoute(
-          builder: (_) => _wrapWithCanPop(const ForgetPasswordPage()),
-        );
-      case RoutesName.verifyUser:
-        return MaterialPageRoute(
-          builder: (_) => _wrapWithCanPop(const VerifyUserPage()),
-        );
-      case RoutesName.resetPassword:
-        return MaterialPageRoute(
-          builder: (_) => _wrapWithCanPop(const ResetPassPage()),
-        );
-      case RoutesName.passwordChanged:
-        return MaterialPageRoute(
-          builder: (_) => _wrapWithCanPop(const PasswordChangedPage()),
-        );
-      default:
-        return MaterialPageRoute(
-          builder: (_) => _wrapWithCanPop(const Placeholder()),
-        );
-    }
-  }
+      GoRoute(
+        path: RoutesName.services,
+        builder: (context, state) => const ServicesPage(),
+      ),
+
+      GoRoute(
+        path: RoutesName.location,
+        builder: (context, state) => const ChooseLocationPage(),
+      ),
+
+      GoRoute(
+        path: RoutesName.confirmLocation,
+        builder: (context, state) {
+          return const ConfirmLocationPage();
+        },
+      ),
+
+      GoRoute(
+        path: RoutesName.forgetPassword,
+        builder: (context, state) => const ForgetPasswordPage(),
+      ),
+
+      GoRoute(
+        path: RoutesName.verifyUser,
+        builder: (context, state) => const VerifyUserPage(),
+      ),
+
+      GoRoute(
+        path: RoutesName.resetPassword,
+        builder: (context, state) => const ResetPassPage(),
+      ),
+
+      GoRoute(
+        path: RoutesName.passwordChanged,
+        builder: (context, state) => const PasswordChangedPage(),
+      ),
+    ],
+
+    errorBuilder: (context, state) {
+      return const Scaffold(body: Center(child: Text('Page not found')));
+    },
+  );
 }

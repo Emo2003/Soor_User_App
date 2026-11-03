@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:soor_app/core/const/assets_manager.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
 import 'package:soor_app/core/widgets/custom_second_btn.dart';
@@ -55,7 +56,7 @@ class _ResetPassPageState extends State<ResetPassPage> {
                 CustomSecondBtn(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.pushNamed(context, RoutesName.passwordChanged);
+                      context.push(RoutesName.passwordChanged);
                     }
                   },
                   text: "Save".tr(),

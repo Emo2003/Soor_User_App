@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:soor_app/core/routes/routes_name.dart';
 import 'package:soor_app/core/themes/color_manager.dart';
@@ -38,7 +39,7 @@ class _VerifyUserPageState extends State<VerifyUserPage> {
       return;
     }
 
-    Navigator.pushNamed(context, RoutesName.resetPassword);
+    context.push(RoutesName.resetPassword);
   }
 
   void resendOtp() {

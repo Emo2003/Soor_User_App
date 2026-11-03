@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:soor_app/core/helper/validators.dart';
 import 'package:soor_app/core/routes/routes_name.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
@@ -55,8 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                       30.verticalSpace,
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(
-                            context,
+                          context.push(
                             RoutesName.forgetPassword,
                           );
                         },
@@ -70,10 +70,8 @@ class _LoginPageState extends State<LoginPage> {
                         text: "Login".tr(),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            Navigator.pushNamedAndRemoveUntil(
-                              context,
+                            context.go(
                               RoutesName.layout,
-                              (route) => false,
                             );
                           }
                         },
@@ -87,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
               text1: "Don't have an account?".tr(),
               text2: "Sign Up".tr(),
               onPressed: () {
-                Navigator.pushNamed(context, RoutesName.signUp);
+                context.push( RoutesName.signUp);
               },
             ),
           ],
