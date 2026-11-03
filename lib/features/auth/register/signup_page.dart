@@ -1,8 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:soor_app/core/themes/color_manager.dart';
 import 'package:soor_app/core/widgets/custom_auth_row.dart';
 import 'package:soor_app/core/widgets/custom_btn.dart';
 import 'package:soor_app/features/auth/register/widget/accept_service_row.dart';
@@ -28,7 +26,6 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.background,
       body: SafeArea(
         child: Form(
           key: _formKey,

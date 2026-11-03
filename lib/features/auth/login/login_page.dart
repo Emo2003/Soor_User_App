@@ -10,8 +10,6 @@ import 'package:soor_app/features/auth/login/widget/custom_app_bar.dart';
 import 'package:soor_app/features/auth/login/widget/login_fields.dart';
 import 'package:soor_app/features/auth/login/widget/login_header.dart';
 
-import '../../../core/themes/color_manager.dart';
-
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -27,7 +25,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.background,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55.h),
         child: CustomAppBar(),

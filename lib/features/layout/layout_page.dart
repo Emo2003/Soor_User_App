@@ -1,10 +1,10 @@
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
 import 'package:soor_app/features/home/home_page.dart';
+import 'package:soor_app/features/services/services_page.dart';
 
 import '../../core/const/assets_manager.dart';
 import '../../core/themes/color_manager.dart';
@@ -21,7 +21,7 @@ class _LayoutPageState extends State<LayoutPage> {
 
   final List<Widget> tabs = const [
     HomePage(),
-    Center(child: Text('Service')),
+    ServicesPage(),
     Center(child: Text('Calendar')),
     Center(child: Text('More')),
   ];
@@ -29,20 +29,15 @@ class _LayoutPageState extends State<LayoutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.background,
       body: tabs[selectedIndex],
       bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(25.r),
-        ),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(25.r)),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: ColorManager.primary,
           currentIndex: selectedIndex,
 
-          selectedLabelStyle: StyleManager.yellowText.copyWith(
-            fontSize: 12.sp,
-          ),
+          selectedLabelStyle: StyleManager.yellowText.copyWith(fontSize: 12.sp),
           unselectedLabelStyle: StyleManager.whiteText.copyWith(
             fontSize: 12.sp,
           ),
@@ -60,11 +55,7 @@ class _LayoutPageState extends State<LayoutPage> {
           },
 
           items: [
-            _navItem(
-              AssetsManager.home,
-              AssetsManager.homeActive,
-              'Home'.tr(),
-            ),
+            _navItem(AssetsManager.home, AssetsManager.homeActive, 'Home'.tr()),
             _navItem(
               AssetsManager.service,
               AssetsManager.serviceActive,
@@ -75,11 +66,7 @@ class _LayoutPageState extends State<LayoutPage> {
               AssetsManager.calenderActive,
               'Booking'.tr(),
             ),
-            _navItem(
-              AssetsManager.more,
-              AssetsManager.moreActive,
-              'More'.tr(),
-            ),
+            _navItem(AssetsManager.more, AssetsManager.moreActive, 'More'.tr()),
           ],
         ),
       ),
@@ -87,10 +74,10 @@ class _LayoutPageState extends State<LayoutPage> {
   }
 
   BottomNavigationBarItem _navItem(
-      String icon,
-      String activeIcon,
-      String label,
-      ) {
+    String icon,
+    String activeIcon,
+    String label,
+  ) {
     return BottomNavigationBarItem(
       icon: SvgPicture.asset(icon),
 
@@ -99,10 +86,7 @@ class _LayoutPageState extends State<LayoutPage> {
           color: ColorManager.tabColor,
           borderRadius: BorderRadius.circular(40.r),
         ),
-        padding: EdgeInsets.symmetric(
-          horizontal: 17.w,
-          vertical: 4.h,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 17.w, vertical: 4.h),
         child: SvgPicture.asset(activeIcon),
       ),
 

@@ -48,7 +48,6 @@ class _VerifyUserPageState extends State<VerifyUserPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.background,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.h),
         child: CustomForgetAppBar(onPressed: () => Navigator.pop(context)),

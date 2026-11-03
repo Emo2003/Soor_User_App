@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:soor_app/core/themes/color_manager.dart';
 import 'package:soor_app/features/home/widget/all_services.dart';
 import 'package:soor_app/features/home/widget/booking_container.dart';
 import 'package:soor_app/features/home/widget/custom_home_app_bar.dart';
@@ -15,7 +14,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.background,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.h),
         child: const CustomHomeAppBar(),
