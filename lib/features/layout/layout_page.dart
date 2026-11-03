@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
+import 'package:soor_app/features/home/home_page.dart';
 
 import '../../core/const/assets_manager.dart';
 import '../../core/themes/color_manager.dart';
@@ -19,7 +20,7 @@ class _LayoutPageState extends State<LayoutPage> {
   int selectedIndex = 0;
 
   final List<Widget> tabs = const [
-    Center(child: Text('Home')),
+    HomePage(),
     Center(child: Text('Service')),
     Center(child: Text('Calendar')),
     Center(child: Text('More')),
@@ -28,6 +29,7 @@ class _LayoutPageState extends State<LayoutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorManager.background,
       body: tabs[selectedIndex],
       bottomNavigationBar: ClipRRect(
         borderRadius: BorderRadius.vertical(

@@ -2,6 +2,7 @@ class AssetsManager {
   static const String logo = 'assets/images/logo.png';
   static const String success = 'assets/images/success.png';
   static const String x = 'assets/images/x.png';
+  static const String notification = 'assets/svg_images/notification.svg';
 
   static const String home = 'assets/svg_images/home.svg';
   static const String service = 'assets/svg_images/service.svg';
@@ -12,4 +13,6 @@ class AssetsManager {
   static const String serviceActive = 'assets/svg_images/service_active.svg';
   static const String calenderActive = 'assets/svg_images/calendar_active.svg';
   static const String moreActive = 'assets/svg_images/more_active.svg';
+  static const String singleUser = 'assets/svg_images/single_user.svg';
+  static const String doubleUser = 'assets/svg_images/double_user.svg';
 }
