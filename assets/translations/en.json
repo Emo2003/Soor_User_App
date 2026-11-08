@@ -66,5 +66,20 @@
   "house_number": "House Number",
   "floor_number": "Floor Number",
   "additional_address_details": "Additional Address Details",
-  "Confirm": "Confirm"
+  "Confirm": "Confirm",
+  "Booking Details": "Booking Details",
+  "Booking start date and time": "Booking start date and time",
+  "NumGuards": "Number of guards",
+  "3 individuals": "3 individuals",
+  "The Guard's Arrival": "The Guard's Arrival",
+  "Payment Methods": "Payment Methods",
+  "Payment Summary": "Payment Summary",
+  "Order Value": "Order Value",
+  "Service Fee": "Service Fee",
+  "Order Tracking": "Order Tracking",
+  "Arrival of the Guards": "Arrival of the Guards",
+  "Show more": "Show more",
+  "Total": "Total",
+  "Acceptance by the Guards":  "Acceptance by the Guards",
+  "Enter the description here": "Enter the description here"
 }

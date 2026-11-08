@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../core/themes/style_manager.dart';
 
 class ServiceContainer extends StatelessWidget {
@@ -21,9 +22,9 @@ class ServiceContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
-      width: 90.w,
-      height: 90.w,
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+      width: 95.w,
+      height: 95.w,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [firstColor, secondColor.withAlpha(200)],
@@ -41,7 +42,12 @@ class ServiceContainer extends StatelessWidget {
             2.verticalSpace,
             Text(
               title.tr(),
-              style: StyleManager.whiteText.copyWith(fontSize: 16.sp),
+              maxLines: 2,
+              textAlign: TextAlign.center,
+              style: StyleManager.whiteText.copyWith(
+                fontSize: 15.sp,
+                decorationStyle: TextDecorationStyle.dotted,
+              ),
             ),
           ],
         ),
