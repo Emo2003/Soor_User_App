@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
+import 'package:soor_app/features/booking/booking_page.dart';
 import 'package:soor_app/features/home/home_page.dart';
 import 'package:soor_app/features/services/services_page.dart';
 
@@ -22,7 +23,7 @@ class _LayoutPageState extends State<LayoutPage> {
   final List<Widget> tabs = const [
     HomePage(),
     ServicesPage(),
-    Center(child: Text('Calendar')),
+    BookingPage(),
     Center(child: Text('More')),
   ];
 

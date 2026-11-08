@@ -10,4 +10,5 @@ class RoutesName {
   static const String services = '/services';
   static const String location = '/location';
   static const String confirmLocation = '/confirmLocation';
+  static const String bookingDetails ='/bookingDetails';
 }

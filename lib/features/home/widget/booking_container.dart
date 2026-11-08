@@ -20,18 +20,20 @@ class BookingContainer extends StatelessWidget {
         children: [
           Row(
             children: [
-              Text("#123456", style: TextStyle(color: ColorManager.white)),
+              Text(
+                "#123456",
+                style: StyleManager.whiteText.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
               Spacer(),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
                 decoration: BoxDecoration(
                   color: ColorManager.green,
                   borderRadius: BorderRadius.circular(25.r),
                 ),
-                child: Text(
-                  "Finished".tr(),
-                  style: TextStyle(color: ColorManager.white),
-                ),
+                child: Text("Finished".tr(), style: StyleManager.whiteText),
               ),
             ],
           ),

@@ -66,5 +66,20 @@
   "house_number": "رقم المنزل",
   "floor_number": "رقم الدور",
   "additional_address_details": "تفاصيل إضافية للعنوان",
-  "Confirm": "تأكيد"
+  "Confirm": "تأكيد",
+  "Booking Details": "تفاصيل الحجز",
+  "Booking start date and time": "تاريخ ووقت بدء الحجز",
+  "NumGuards": "عدد الحراس",
+  "3 individuals": "3 أفراد",
+  "The Guard's Arrival": "وصول الحارس",
+  "Payment Methods": "طرق الدفع",
+  "Payment Summary": "ملخص الدفع",
+  "Order Value": "قيمة الطلب",
+  "Service Fee": "رسوم الخدمة",
+  "Order Tracking": "متابعة الطلب",
+  "Arrival of the Guards": "وصول الحارس",
+  "Show more": "عرض المزيد",
+  "Total": "الاجمالي",
+  "Acceptance by the Guards": "قبول الحارس",
+  "Enter the description here": "هنا يكتب الوصف"
 }

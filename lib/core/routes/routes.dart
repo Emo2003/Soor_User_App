@@ -6,6 +6,7 @@ import 'package:soor_app/features/auth/forget_password/reset_pass_page.dart';
 import 'package:soor_app/features/auth/forget_password/verify_user_page.dart';
 import 'package:soor_app/features/auth/login/login_page.dart';
 import 'package:soor_app/features/auth/register/signup_page.dart';
+import 'package:soor_app/features/booking/booking_details.dart';
 import 'package:soor_app/features/home/home_page.dart';
 import 'package:soor_app/features/layout/layout_page.dart';
 import 'package:soor_app/features/location/choose_location_page.dart';
@@ -53,6 +54,12 @@ class AppRouter {
         path: RoutesName.confirmLocation,
         builder: (context, state) {
           return const ConfirmLocationPage();
+        },
+      ),
+      GoRoute(
+        path: RoutesName.bookingDetails,
+        builder: (context, state) {
+          return const BookingDetails();
         },
       ),
 

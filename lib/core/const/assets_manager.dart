@@ -16,4 +16,6 @@ class AssetsManager {
   static const String singleUser = 'assets/svg_images/single_user.svg';
   static const String doubleUser = 'assets/svg_images/double_user.svg';
   static const String location = 'assets/svg_images/Icon.svg';
+  static const String message = 'assets/images/message.png';
+  static const String tick = 'assets/images/Tick.png';
 }
