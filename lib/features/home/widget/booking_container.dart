@@ -54,9 +54,12 @@ class BookingContainer extends StatelessWidget {
             ],
           ),
           TextButton(
-            style: TextButton.styleFrom(padding: EdgeInsets.zero),
+            style: TextButton.styleFrom(
+              padding: EdgeInsets.zero,
+            ),
             onPressed: () {},
             child: Row(
+              mainAxisSize: MainAxisSize.min,
               spacing: 7.w,
               children: [
                 Text(
