@@ -33,4 +33,10 @@ class StyleManager {
     fontSize: 16.sp,
     fontWeight: FontWeight.w400,
   );
+
+  static TextStyle call = TextStyle(
+    color: ColorManager.lightGray,
+    fontSize: 54.sp,
+    fontWeight: FontWeight.w600,
+  );
 }

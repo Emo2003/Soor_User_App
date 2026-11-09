@@ -36,7 +36,7 @@ class ServiceContainer extends StatelessWidget {
       ),
       child: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(iconPath),
             2.verticalSpace,

@@ -39,10 +39,14 @@ class BookingDetailsContainer extends StatelessWidget {
               Expanded(
                 child: Text(
                   "Booking start date and time".tr(),
-                  style: StyleManager.hintText,
+                  style: StyleManager.hintText.copyWith(
+                    fontSize: 13.sp
+                  ),
                 ),
               ),
-              Text("NumGuards".tr(), style: StyleManager.hintText),
+              Text("NumGuards".tr(), style: StyleManager.hintText.copyWith(
+                fontSize: 13.sp
+              )),
             ],
           ),
           10.verticalSpace,

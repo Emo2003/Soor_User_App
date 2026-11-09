@@ -18,4 +18,13 @@ class AssetsManager {
   static const String location = 'assets/svg_images/Icon.svg';
   static const String message = 'assets/images/message.png';
   static const String tick = 'assets/images/Tick.png';
+  static const String call = 'assets/images/call.png';
+  static const String person = 'assets/images/person.png';
+  static const String soorPerson = 'assets/images/soor.png';
+  static const String doubleCheck = 'assets/images/doubleCheck.png';
+  static const String send = 'assets/images/send.png';
+  static const String callImage = 'assets/images/call_image.png';
+  static const String cancelCall = 'assets/images/cancel_call.png';
+  static const String speaker = 'assets/images/speaker.png';
+  static const String mic = 'assets/images/mic.png';
 }
