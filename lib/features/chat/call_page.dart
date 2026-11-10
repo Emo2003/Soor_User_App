@@ -5,8 +5,8 @@ import 'package:soor_app/core/const/assets_manager.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
 import 'package:soor_app/features/chat/widget/call_app_bar.dart';
 
-import '../../../core/themes/color_manager.dart';
-import 'call_state_container.dart';
+import '../../core/themes/color_manager.dart';
+import 'widget/call_state_container.dart';
 
 class CallPage extends StatelessWidget {
   const CallPage({super.key});

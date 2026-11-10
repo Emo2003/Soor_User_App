@@ -7,6 +7,7 @@ import 'core/routes/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await EasyLocalization.ensureInitialized();
   runApp(
     EasyLocalization(

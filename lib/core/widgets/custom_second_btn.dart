@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,7 +28,7 @@ class CustomSecondBtn extends StatelessWidget {
         minimumSize: Size(double.infinity, 40.h),
       ),
       child: Text(
-        text,
+        text.tr(),
         style: StyleManager.whiteText.copyWith(
           fontSize: 16.sp,
           fontWeight: FontWeight.w700,
