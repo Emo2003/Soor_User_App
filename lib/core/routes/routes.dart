@@ -8,11 +8,12 @@ import 'package:soor_app/features/auth/login/login_page.dart';
 import 'package:soor_app/features/auth/register/signup_page.dart';
 import 'package:soor_app/features/booking/booking_details.dart';
 import 'package:soor_app/features/chat/chat_page.dart';
-import 'package:soor_app/features/chat/widget/call_page.dart';
+import 'package:soor_app/features/chat/call_page.dart';
 import 'package:soor_app/features/home/home_page.dart';
 import 'package:soor_app/features/layout/layout_page.dart';
 import 'package:soor_app/features/location/choose_location_page.dart';
 import 'package:soor_app/features/confirm_location/confirm_location_page.dart';
+import 'package:soor_app/features/orders/order_details_page.dart';
 import 'package:soor_app/features/services/services_page.dart';
 
 import 'routes_name.dart';
@@ -67,6 +68,10 @@ class AppRouter {
       GoRoute(
         path: RoutesName.call,
         builder: (context, state) => const CallPage(),
+      ),
+      GoRoute(
+        path: RoutesName.orderDetails,
+        builder: (context, state) => const OrderDetailsPage(),
       ),
       GoRoute(
         path: RoutesName.forgetPassword,

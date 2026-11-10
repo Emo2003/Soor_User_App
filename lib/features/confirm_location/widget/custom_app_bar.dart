@@ -6,24 +6,27 @@ import 'package:soor_app/core/themes/style_manager.dart';
 import 'package:soor_app/core/widgets/custom_leading.dart';
 
 class CustomAppBar extends StatelessWidget {
+  final String title;
   final Function() onBackPressed;
 
-  const CustomAppBar({super.key, required this.onBackPressed});
+  const CustomAppBar({
+    super.key,
+    required this.onBackPressed,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: ColorManager.primary,
       title: Text(
-        "Confirm Location".tr(),
+        title.tr(),
         style: StyleManager.whiteText.copyWith(
           fontSize: 16.sp,
           fontWeight: FontWeight.w600,
         ),
       ),
-      leading: CustomLeading(
-        onBackPressed: onBackPressed
-      ),
+      leading: CustomLeading(onBackPressed: onBackPressed),
       centerTitle: true,
     );
   }

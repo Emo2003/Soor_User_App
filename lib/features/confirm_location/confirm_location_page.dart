@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:soor_app/core/routes/routes_name.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
 import 'package:soor_app/core/widgets/custom_second_btn.dart';
 import 'package:soor_app/features/confirm_location/widget/custom_app_bar.dart';
@@ -17,6 +18,7 @@ class ConfirmLocationPage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppBar(
+          title: "Confirm Location",
           onBackPressed: () {
             context.pop();
           },
@@ -42,7 +44,12 @@ class ConfirmLocationPage extends StatelessWidget {
             10.verticalSpace,
             LocationAdditionField(hintText: "additional_address_details".tr()),
             Spacer(),
-            CustomSecondBtn(onPressed: () {}, text: "Confirm".tr()),
+            CustomSecondBtn(
+              onPressed: () {
+                context.push(RoutesName.orderDetails);
+              },
+              text: "Confirm".tr(),
+            ),
           ],
         ),
       ),
