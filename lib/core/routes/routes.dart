@@ -9,6 +9,7 @@ import 'package:soor_app/features/auth/register/signup_page.dart';
 import 'package:soor_app/features/booking/booking_details.dart';
 import 'package:soor_app/features/chat/chat_page.dart';
 import 'package:soor_app/features/chat/call_page.dart';
+import 'package:soor_app/features/chat/widget/chats_page.dart';
 import 'package:soor_app/features/home/home_page.dart';
 import 'package:soor_app/features/layout/layout_page.dart';
 import 'package:soor_app/features/location/choose_location_page.dart';
@@ -16,6 +17,8 @@ import 'package:soor_app/features/confirm_location/confirm_location_page.dart';
 import 'package:soor_app/features/orders/order_details_page.dart';
 import 'package:soor_app/features/orders/order_review_page.dart';
 import 'package:soor_app/features/orders/widget/success_order_page.dart';
+import 'package:soor_app/features/profile/policy_page.dart';
+import 'package:soor_app/features/profile/profile_page.dart';
 import 'package:soor_app/features/services/services_page.dart';
 
 import 'routes_name.dart';
@@ -29,7 +32,18 @@ class AppRouter {
         path: RoutesName.login,
         builder: (context, state) => const LoginPage(),
       ),
-
+      GoRoute(
+        path: RoutesName.profile,
+        builder: (context, state) => const ProfilePage(),
+      ),
+      GoRoute(
+        path: RoutesName.chats,
+        builder: (context, state) => const ChatsPage(),
+      ),
+      GoRoute(
+        path: RoutesName.policy,
+        builder: (context, state) => const PolicyPage(),
+      ),
       GoRoute(
         path: RoutesName.signUp,
         builder: (context, state) => const SignupPage(),

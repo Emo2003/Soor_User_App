@@ -31,4 +31,8 @@ class AssetsManager {
   static const String medaCard = 'assets/images/meda.png';
   static const String apple = 'assets/images/ApplePay.png';
   static const String successOrder = 'assets/images/success_order.png';
+  static const String edit = 'assets/images/edit.png';
+  static const String language = 'assets/images/language.png';
+  static const String annotation = 'assets/images/annotation-info.png';
+  static const String logout = 'assets/images/log-out-04-alt.png';
 }

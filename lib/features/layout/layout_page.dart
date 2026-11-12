@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
 import 'package:soor_app/features/booking/booking_page.dart';
 import 'package:soor_app/features/home/home_page.dart';
+import 'package:soor_app/features/profile/profile_page.dart';
 import 'package:soor_app/features/services/services_page.dart';
 
 import '../../core/const/assets_manager.dart';
@@ -24,7 +25,7 @@ class _LayoutPageState extends State<LayoutPage> {
     HomePage(),
     ServicesPage(),
     BookingPage(),
-    Center(child: Text('More')),
+    ProfilePage(),
   ];
 
   @override
