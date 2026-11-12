@@ -15,4 +15,5 @@ class RoutesName {
   static const String call = '/call';
   static const String orderDetails = '/orderDetails';
   static const String orderReview = '/orderReview';
+  static const String orderSuccess = '/orderSuccess';
 }

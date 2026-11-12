@@ -136,5 +136,8 @@
   "select_time": "Select Time",
   "agree_to": "I agree to ",
   "terms_conditions": "Terms and Conditions",
-  "pay": "Pay"
+  "pay": "Pay",
+  "track_order": "Track Order",
+  "back_to_home": "Back to Home",
+  "Your order has been placed successfully.": "Your order has been booked successfully."
 }

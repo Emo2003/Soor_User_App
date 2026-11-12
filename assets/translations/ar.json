@@ -136,5 +136,8 @@
   "select_time": "اختر الوقت",
   "agree_to": " أوافق على",
   "terms_conditions": "الشروط والأحكام",
-  "pay": "الدفع"
+  "pay": "الدفع",
+  "track_order": "متابعة الطلب",
+  "back_to_home": "إلى الرئيسية",
+  "Your order has been placed successfully.": "تم حجز طلبك بنجاح."
 }
