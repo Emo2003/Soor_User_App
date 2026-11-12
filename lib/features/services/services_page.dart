@@ -1,10 +1,9 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:soor_app/core/const/assets_manager.dart';
 import 'package:soor_app/core/themes/color_manager.dart';
-import 'package:soor_app/core/themes/style_manager.dart';
+import 'package:soor_app/core/widgets/custom_layout_app_bar.dart';
 import 'package:soor_app/features/services/widget/service_order_container.dart';
 
 import '../../core/routes/routes_name.dart';
@@ -15,13 +14,9 @@ class ServicesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: ColorManager.primary,
-        title: Text(
-          "Services".tr(),
-          style: StyleManager.whiteText.copyWith(fontSize: 16.sp),
-        ),
-        centerTitle: true,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50.h),
+        child: CustomLayoutAppBar(title: "Services"),
       ),
       body: Column(
         children: [
@@ -30,9 +25,9 @@ class ServicesPage extends StatelessWidget {
             iconPath: AssetsManager.singleUser,
             firstColor: ColorManager.yellow,
             secondColor: ColorManager.brown,
-              onPressed: (){
-                context.push(RoutesName.location);
-              },
+            onPressed: () {
+              context.push(RoutesName.location);
+            },
           ),
 
           ServiceOrderContainer(
@@ -40,7 +35,7 @@ class ServicesPage extends StatelessWidget {
             iconPath: AssetsManager.doubleUser,
             firstColor: ColorManager.babyBlue,
             secondColor: ColorManager.darkBlue,
-            onPressed: (){
+            onPressed: () {
               context.push(RoutesName.location);
             },
           ),

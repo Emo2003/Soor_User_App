@@ -139,5 +139,9 @@
   "pay": "Pay",
   "track_order": "Track Order",
   "back_to_home": "Back to Home",
-  "Your order has been placed successfully.": "Your order has been booked successfully."
+  "Your order has been placed successfully.": "Your order has been booked successfully.",
+  "change_language": "Change Language",
+  "chats": "Chats",
+  "terms_and_conditions": "Terms and Conditions",
+  "logout": "Log Out"
 }

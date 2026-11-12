@@ -139,5 +139,9 @@
   "pay": "الدفع",
   "track_order": "متابعة الطلب",
   "back_to_home": "إلى الرئيسية",
-  "Your order has been placed successfully.": "تم حجز طلبك بنجاح."
+  "Your order has been placed successfully.": "تم حجز طلبك بنجاح.",
+  "change_language": "تغيير اللغة",
+  "chats": "المحادثات",
+  "terms_and_conditions": "الشروط والأحكام",
+  "logout": "تسجيل خروج"
 }
