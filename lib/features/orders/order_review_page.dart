@@ -2,9 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:soor_app/core/routes/routes_name.dart';
 import 'package:soor_app/core/themes/color_manager.dart';
 import 'package:soor_app/features/orders/widget/checkbox_row.dart';
 import 'package:soor_app/features/orders/widget/payment_methods_container.dart';
+
 import '../../core/widgets/custom_second_btn.dart';
 import '../booking/widget/booking_details_container.dart';
 import '../booking/widget/payment_summary_container.dart';
@@ -31,7 +33,7 @@ class OrderReviewPage extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding:  EdgeInsets.all(15.sp),
+              padding: EdgeInsets.all(15.sp),
               child: Column(
                 children: [
                   const LocationData(),
@@ -47,19 +49,19 @@ class OrderReviewPage extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
               width: double.infinity,
-              decoration: BoxDecoration(
-                color: ColorManager.darkGray,
-              ),
+              decoration: BoxDecoration(color: ColorManager.darkGray),
               child: Column(
                 children: [
                   CheckboxRow(),
                   CustomSecondBtn(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.push(RoutesName.orderSuccess);
+                    },
                     text: "pay".tr(),
                   ),
                   20.verticalSpace,
                 ],
-              )
+              ),
             ),
           ],
         ),
