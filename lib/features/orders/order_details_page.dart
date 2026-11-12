@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:soor_app/core/routes/routes_name.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
 import 'package:soor_app/core/widgets/custom_second_btn.dart';
 import 'package:soor_app/features/orders/widget/addition_details_container.dart';
@@ -27,6 +28,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
       guardsCount++;
     });
   }
+
   void decrementGuards() {
     if (guardsCount > 1) {
       setState(() {
@@ -34,11 +36,13 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
       });
     }
   }
+
   void incrementDuration() {
     setState(() {
       serviceDuration++;
     });
   }
+
   void decrementDuration() {
     if (serviceDuration > 3) {
       setState(() {
@@ -61,43 +65,50 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-        child: Padding(
-          padding: EdgeInsets.all(15.sp),
-          child: Column(
-            children: [
-              OrderDetailsContainer(),
-              15.verticalSpace,
-
-              GuardsCountContainer(
-                guardsCount: guardsCount,
-                serviceDuration: serviceDuration,
-                incrementGuards: incrementGuards,
-                decrementGuards: decrementGuards,
-                incrementDuration: incrementDuration,
-                decrementDuration: decrementDuration,
-              ),
-
-              15.verticalSpace,
-              AdditionDetailsContainer(),
-              15.verticalSpace,
-              Container(
-                width: double.infinity,
-                height: 130.h,
-                padding: EdgeInsets.all(12.sp),
-                decoration: BoxDecoration(
-                  color: ColorManager.primary,
-                  borderRadius: BorderRadius.circular(8.r),
-                  border: Border.all(color: ColorManager.darkGray, width: 1.w),
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.all(15.sp),
+            child: Column(
+              children: [
+                OrderDetailsContainer(),
+                15.verticalSpace,
+          
+                GuardsCountContainer(
+                  guardsCount: guardsCount,
+                  serviceDuration: serviceDuration,
+                  incrementGuards: incrementGuards,
+                  decrementGuards: decrementGuards,
+                  incrementDuration: incrementDuration,
+                  decrementDuration: decrementDuration,
                 ),
-                child: Text(
-                  "additional_notes_hint".tr(),
-                  style: StyleManager.hintText,
-                  maxLines: 10,
+          
+                15.verticalSpace,
+                AdditionDetailsContainer(),
+                15.verticalSpace,
+                Container(
+                  width: double.infinity,
+                  height: 130.h,
+                  padding: EdgeInsets.all(12.sp),
+                  decoration: BoxDecoration(
+                    color: ColorManager.primary,
+                    borderRadius: BorderRadius.circular(8.r),
+                    border: Border.all(color: ColorManager.darkGray, width: 1.w),
+                  ),
+                  child: Text(
+                    "additional_notes_hint".tr(),
+                    style: StyleManager.hintText,
+                    maxLines: 10,
+                  ),
                 ),
-              ),
-              20.verticalSpace,
-              CustomSecondBtn(onPressed: () {}, text: "request_amount"),
-            ],
+                20.verticalSpace,
+                CustomSecondBtn(
+                  onPressed: () {
+                    context.push(RoutesName.orderReview);
+                  },
+                  text: "request_amount",
+                ),
+              ],
+            ),
           ),
         ),
       ),

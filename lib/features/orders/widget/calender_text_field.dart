@@ -9,21 +9,24 @@ import '../../../core/themes/style_manager.dart';
 
 class CalenderTextField extends StatelessWidget {
   final TextEditingController controller;
-  const CalenderTextField({super.key,required this.controller});
+  final VoidCallback onTap;
+
+  const CalenderTextField({
+    super.key,
+    required this.controller,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onTap: () {},
+      onTap: onTap,
       controller: controller,
       cursorColor: ColorManager.white,
       scrollPadding: EdgeInsets.zero,
       style: StyleManager.hintText,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(
-          horizontal: 10.w,
-          vertical: 5.h,
-        ),
+        contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
         constraints: BoxConstraints(maxHeight: 50.h),
         hintText: "enter_booking_date".tr(),
         filled: true,
@@ -39,24 +42,15 @@ class CalenderTextField extends StatelessWidget {
         fillColor: ColorManager.darkGray,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide(
-            color: ColorManager.mediumGray,
-            width: 1.w,
-          ),
+          borderSide: BorderSide(color: ColorManager.mediumGray, width: 1.w),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide(
-            color: ColorManager.mediumGray,
-            width: 1.w,
-          ),
+          borderSide: BorderSide(color: ColorManager.mediumGray, width: 1.w),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide(
-            color: ColorManager.mediumGray,
-            width: 1.w,
-          ),
+          borderSide: BorderSide(color: ColorManager.mediumGray, width: 1.w),
         ),
         errorStyle: TextStyle(color: Colors.redAccent, fontSize: 12.sp),
         errorBorder: OutlineInputBorder(
