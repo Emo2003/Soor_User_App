@@ -10,8 +10,7 @@ class PaymentSummaryContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
-      decoration: BoxDecoration(
+      padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),      decoration: BoxDecoration(
         border: Border.all(color: ColorManager.darkGray, width: 1.5.w),
         borderRadius: BorderRadius.circular(14.r),
       ),

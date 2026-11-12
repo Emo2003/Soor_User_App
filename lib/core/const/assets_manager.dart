@@ -27,4 +27,7 @@ class AssetsManager {
   static const String cancelCall = 'assets/images/cancel_call.png';
   static const String speaker = 'assets/images/speaker.png';
   static const String mic = 'assets/images/mic.png';
+  static const String visa = 'assets/images/visa-logo.png';
+  static const String medaCard = 'assets/images/meda.png';
+  static const String apple = 'assets/images/ApplePay.png';
 }

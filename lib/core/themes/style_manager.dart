@@ -39,4 +39,9 @@ class StyleManager {
     fontSize: 54.sp,
     fontWeight: FontWeight.w600,
   );
+  static TextStyle mediumTitle = TextStyle(
+    color: ColorManager.white,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
+  );
 }

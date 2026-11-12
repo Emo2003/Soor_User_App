@@ -5,13 +5,14 @@ import 'package:soor_app/core/themes/color_manager.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
 
 class BookingDetailsContainer extends StatelessWidget {
-  const BookingDetailsContainer({super.key});
+  final bool isDetailed;
+
+  const BookingDetailsContainer({super.key, this.isDetailed = false});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
-      decoration: BoxDecoration(
+      padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),      decoration: BoxDecoration(
         border: Border.all(color: ColorManager.darkGray, width: 1.5.w),
         borderRadius: BorderRadius.circular(12.r),
       ),
@@ -39,14 +40,13 @@ class BookingDetailsContainer extends StatelessWidget {
               Expanded(
                 child: Text(
                   "Booking start date and time".tr(),
-                  style: StyleManager.hintText.copyWith(
-                    fontSize: 13.sp
-                  ),
+                  style: StyleManager.hintText.copyWith(fontSize: 13.sp),
                 ),
               ),
-              Text("NumGuards".tr(), style: StyleManager.hintText.copyWith(
-                fontSize: 13.sp
-              )),
+              Text(
+                "NumGuards".tr(),
+                style: StyleManager.hintText.copyWith(fontSize: 13.sp),
+              ),
             ],
           ),
           10.verticalSpace,
@@ -82,17 +82,21 @@ class BookingDetailsContainer extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 3.h, horizontal: 10.w),
-                decoration: BoxDecoration(
-                  color: ColorManager.orange,
-                  borderRadius: BorderRadius.circular(25.r),
+              if (!isDetailed)
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 3.h,
+                    horizontal: 10.w,
+                  ),
+                  decoration: BoxDecoration(
+                    color: ColorManager.orange,
+                    borderRadius: BorderRadius.circular(25.r),
+                  ),
+                  child: Text(
+                    "The Guard's Arrival".tr(),
+                    style: StyleManager.whiteText,
+                  ),
                 ),
-                child: Text(
-                  "The Guard's Arrival".tr(),
-                  style: StyleManager.whiteText,
-                ),
-              ),
             ],
           ),
         ],

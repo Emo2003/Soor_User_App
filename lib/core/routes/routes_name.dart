@@ -10,8 +10,9 @@ class RoutesName {
   static const String services = '/services';
   static const String location = '/location';
   static const String confirmLocation = '/confirmLocation';
-  static const String bookingDetails ='/bookingDetails';
-  static const String chat='/chat';
-  static const String call='/call';
-  static const String orderDetails='/orderDetails';
+  static const String bookingDetails = '/bookingDetails';
+  static const String chat = '/chat';
+  static const String call = '/call';
+  static const String orderDetails = '/orderDetails';
+  static const String orderReview = '/orderReview';
 }
