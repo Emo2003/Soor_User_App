@@ -176,6 +176,15 @@
   "terms_modification_notice": "Users will be notified of any significant changes. Continued use of the application after such changes constitutes implicit acceptance of the updated terms.",
   "excellent_service": "Excellent service",
   "Chats'": "Chats",
-  "Account": "Account"
-
+  "Account": "Account",
+  "extend_time": "Extend Time",
+  "rating": "Rating",
+  "service_duration_per_hour": "Service Duration (Hours)",
+  "general_appearance": "General Appearance",
+  "punctuality": "Punctuality",
+  "communication_style": "Communication Style",
+  "safety_and_trust": "Safety and Trust",
+  "overall_satisfaction": "Overall Satisfaction",
+  "rating_submitted_successfully": "Your rating has been submitted successfully",
+  "hours": "Hours"
 }

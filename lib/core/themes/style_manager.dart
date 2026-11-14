@@ -44,4 +44,9 @@ class StyleManager {
     fontSize: 18.sp,
     fontWeight: FontWeight.w600,
   );
+  static TextStyle darkYellow = TextStyle(
+    color: ColorManager.secondary,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+  );
 }

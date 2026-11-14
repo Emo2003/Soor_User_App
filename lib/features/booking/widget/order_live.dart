@@ -41,7 +41,7 @@ class _OrderTackState extends StatelessWidget {
   final bool isLast;
   final bool isDone;
 
-  const _OrderTackState({ this.isLast = true, this.isDone = false});
+  const _OrderTackState({this.isLast = true, this.isDone = false});
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +91,7 @@ class _OrderTackState extends StatelessWidget {
               Text(
                 "Acceptance by the Guards".tr(),
                 style: StyleManager.title.copyWith(
-                  color: ColorManager.darkBlue,
+                  color: ColorManager.blue,
                   fontSize: 18.sp,
                 ),
               ),
