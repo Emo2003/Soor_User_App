@@ -21,6 +21,8 @@ class UserServiceContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isEnglish = context.locale.languageCode == 'en';
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 3.sp, vertical: 5.sp),
       decoration: BoxDecoration(
@@ -35,7 +37,7 @@ class UserServiceContainer extends StatelessWidget {
               children: [
                 if (isLanguageChangeEnabled)
                   Text(
-                    "English".tr(),
+                    isEnglish ? 'العربية' : 'English',
                     style: StyleManager.yellowText.copyWith(
                       fontSize: 14.sp,
                       color: ColorManager.yellow,

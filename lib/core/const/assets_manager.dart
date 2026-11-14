@@ -35,4 +35,5 @@ class AssetsManager {
   static const String language = 'assets/images/language.png';
   static const String annotation = 'assets/images/annotation-info.png';
   static const String logout = 'assets/images/log-out-04-alt.png';
+  static const String soorYellow = 'assets/images/soor_yellow.png';
 }

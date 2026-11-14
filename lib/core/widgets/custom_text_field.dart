@@ -9,13 +9,15 @@ class CustomTextField extends StatefulWidget {
   final bool isObscured;
   final String? Function(String?)? validator;
   final TextEditingController? controller;
+  final  bool isEditable;
 
-  const CustomTextField({
+ const  CustomTextField({
     super.key,
     required this.hintText,
     this.isObscured = false,
     required this.validator,
     required this.controller,
+    this.isEditable = false,
   });
 
   @override
@@ -54,6 +56,11 @@ class _CustomTextFieldState extends State<CustomTextField> {
                     isPasswordHidden = !isPasswordHidden;
                   });
                 },
+              )
+            : widget.isEditable
+            ? IconButton(
+                icon: Icon(Icons.edit, color: ColorManager.gray),
+                onPressed: () {},
               )
             : null,
         hintText: widget.hintText,

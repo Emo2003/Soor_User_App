@@ -1,3 +1,8 @@
+import 'dart:ui';
+
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
+
 class DummyData {
    static final List<ReviewModel> reviews = [
     ReviewModel(
@@ -16,6 +21,16 @@ class DummyData {
       review: "Amazing experience. Highly recommended!",
     ),
   ];
+ static void changeLanguage({required BuildContext context}) {
+
+   final currentLocale = context.locale;
+
+   if (currentLocale.languageCode == 'en') {
+   context.setLocale(const Locale('ar'));
+   } else {
+   context.setLocale(const Locale('en'));
+   }
+   }
 }
 
 class ReviewModel {

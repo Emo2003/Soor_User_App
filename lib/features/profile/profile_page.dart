@@ -5,6 +5,8 @@ import 'package:soor_app/core/const/assets_manager.dart';
 import 'package:soor_app/core/routes/routes_name.dart';
 import 'package:soor_app/features/profile/widget/user_data_container.dart';
 import 'package:soor_app/features/profile/widget/user_service_container.dart';
+
+import '../../core/const/dummy_data.dart';
 import '../../core/widgets/custom_layout_app_bar.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -28,7 +30,7 @@ class ProfilePage extends StatelessWidget {
                 title: "change_language",
                 iconPath: AssetsManager.language,
                 isLanguageChangeEnabled: true,
-                onTap: () {},
+                onTap: () => DummyData.changeLanguage(context: context),
               ),
               10.verticalSpace,
               UserServiceContainer(

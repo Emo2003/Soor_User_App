@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:soor_app/core/routes/routes_name.dart';
 
 import '../../../core/const/assets_manager.dart';
 import '../../../core/themes/color_manager.dart';
@@ -47,7 +49,12 @@ class UserDataContainer extends StatelessWidget {
             ),
           ),
 
-          Image.asset(AssetsManager.edit),
+          GestureDetector(
+            onTap: () {
+              context.push(RoutesName.account);
+            },
+            child: Image.asset(AssetsManager.edit),
+          ),
         ],
       ),
     );
