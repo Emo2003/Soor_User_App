@@ -176,5 +176,15 @@
   "terms_modification_notice": "يتم إخطار المستخدمين عند إجراء تغييرات جوهرية، ويعتبر استمرار استخدام التطبيق بعد التعديل موافقة ضمنية على الشروط الجديدة.",
   "excellent_service": "خدمة ممتازة",
   "Chats": "المحادثات",
-  "Account": "الحساب"
+  "Account": "الحساب",
+  "extend_time": "مد وقت إضافي",
+  "rating": "تقييم",
+  "service_duration_per_hour": "مدة الخدمة بالساعة",
+  "general_appearance": "المظهر العام",
+  "punctuality": "الالتزام بالوقت",
+  "communication_style": "أسلوب التعامل",
+  "safety_and_trust": "الأمان والثقة",
+  "overall_satisfaction": "الرضا العام",
+  "rating_submitted_successfully": "تم إرسال تقييمك بنجاح",
+  "hours": "ساعات"
 }
