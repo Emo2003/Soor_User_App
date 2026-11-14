@@ -11,6 +11,9 @@ class CustomForgetAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      surfaceTintColor: Colors.transparent,
+      scrolledUnderElevation: 0,
+      elevation: 0,
       backgroundColor: ColorManager.primary,
       leading: CustomLeading(onBackPressed: onPressed),
     );

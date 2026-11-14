@@ -15,9 +15,9 @@ class AdditionDetailsContainer extends StatefulWidget {
 }
 
 class _AdditionDetailsContainerState extends State<AdditionDetailsContainer> {
-  late String selectedDressCode = "format";
-  late String selectedLanguageCode = "arabic";
-  late String selectedCoordinate = "yes";
+  String? selectedDressCode;
+  String? selectedLanguageCode;
+  String? selectedCoordinate;
 
   @override
   Widget build(BuildContext context) {

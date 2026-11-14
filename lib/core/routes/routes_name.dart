@@ -19,4 +19,5 @@ class RoutesName {
   static const String profile = '/profile';
   static const String chats = '/chats';
   static const String policy = '/policy';
+  static const String account = '/account';
 }

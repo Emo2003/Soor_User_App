@@ -3,20 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:soor_app/core/themes/style_manager.dart';
 
+import '../../../../core/const/dummy_data.dart';
 import '../../../../core/themes/color_manager.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
-
-  void changeLanguage(BuildContext context) {
-    final currentLocale = context.locale;
-
-    if (currentLocale.languageCode == 'en') {
-      context.setLocale(const Locale('ar'));
-    } else {
-      context.setLocale(const Locale('en'));
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +15,7 @@ class CustomAppBar extends StatelessWidget {
 
     return AppBar(
       title: TextButton(
-        onPressed: () => changeLanguage(context),
+        onPressed: () => DummyData.changeLanguage(context: context),
         child: Text(
           isEnglish ? 'English' : 'العربية',
           style: StyleManager.yellowText,
@@ -33,23 +24,21 @@ class CustomAppBar extends StatelessWidget {
       titleSpacing: 0.w,
       backgroundColor: ColorManager.primary,
       leading: IconButton(
-        icon: const Icon(
+        icon: Icon(
           Icons.language_outlined,
           color: ColorManager.yellow,
-          size: 25,
+          size: 25.sp,
         ),
-        onPressed: () => changeLanguage(context),
+        onPressed: () => DummyData.changeLanguage(context: context),
       ),
       actions: [
         Container(
-          padding: const EdgeInsets.all(10),
+          padding: EdgeInsets.all(10.sp),
           decoration: BoxDecoration(
             color: ColorManager.darkGray,
-            borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.circular(25.r),
           ),
-          margin: EdgeInsets.symmetric(
-            horizontal: 10.w,
-          ),
+          margin: EdgeInsets.symmetric(horizontal: 10.w),
           child: Image.asset("assets/images/x.png"),
         ),
       ],
