@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -33,9 +32,7 @@ class DummyData {
     }
   }
 
-  static void openSuccessRatingDialog({
-    required BuildContext context,
-  }) {
+  static void openSuccessRatingDialog({required BuildContext context}) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -44,6 +41,45 @@ class DummyData {
       },
     );
   }
+
+ static  List<NotificationModel> notifications = [
+    NotificationModel(
+      title: "Your order has been placed successfully.",
+      content: "The guards is in way",
+      createdAt: DateTime.now(),
+      isNewNotification: true,
+    ),
+    NotificationModel(
+      title: "Your order has been placed successfully.",
+      content: "The guards is in way",
+      createdAt: DateTime.now(),
+    ),
+    NotificationModel(
+      title: "Your order has been placed successfully.",
+      content: "The guards is in way",
+      createdAt: DateTime.now(),
+    ),
+    NotificationModel(
+      title: "Your order has been placed successfully.",
+      content: "The guards is in way",
+      createdAt: DateTime.now().subtract(Duration(days: 1)),
+    ),
+    NotificationModel(
+      title: "Your order has been placed successfully.",
+      content: "The guards is in way",
+      createdAt: DateTime.now().subtract(Duration(days: 1,hours: 7)),
+    ),
+    NotificationModel(
+      title: "Your order has been placed successfully.",
+      content: "The guards is in way",
+      createdAt: DateTime.now().subtract(Duration(days: 2)),
+    ),
+    NotificationModel(
+      title: "Your order has been placed successfully.",
+      content: "The guards is in way",
+      createdAt: DateTime.now().subtract(Duration(days: 2)),
+    ),
+  ];
 }
 
 class ReviewModel {
@@ -56,4 +92,30 @@ class ReviewModel {
     required this.rating,
     required this.review,
   });
+}
+
+class NotificationModel {
+  final String title;
+  final String content;
+  final DateTime createdAt;
+  final bool isNewNotification;
+
+  NotificationModel({
+    required this.title,
+    required this.content,
+    required this.createdAt,
+    this.isNewNotification = false,
+  });
+}
+String dateTitle(DateTime date) {
+  final today = DateUtils.dateOnly(DateTime.now());
+  final yesterday = today.subtract(const Duration(days: 1));
+
+  if (DateUtils.isSameDay(date, today)) {
+    return "Today";
+  } else if (DateUtils.isSameDay(date, yesterday)) {
+    return "Yesterday";
+  } else {
+    return DateFormat('dd MMMM yyyy').format(date);
+  }
 }

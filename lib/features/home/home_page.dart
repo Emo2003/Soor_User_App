@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:soor_app/core/routes/routes_name.dart';
 import 'package:soor_app/features/home/widget/all_services.dart';
 import 'package:soor_app/features/home/widget/booking_container.dart';
 import 'package:soor_app/features/home/widget/custom_home_app_bar.dart';
@@ -16,7 +18,11 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.h),
-        child: const CustomHomeAppBar(),
+        child: CustomHomeAppBar(
+          onTap: () {
+            context.push(RoutesName.notification);
+          },
+        ),
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),

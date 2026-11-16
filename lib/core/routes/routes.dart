@@ -14,6 +14,7 @@ import 'package:soor_app/features/home/home_page.dart';
 import 'package:soor_app/features/layout/layout_page.dart';
 import 'package:soor_app/features/location/choose_location_page.dart';
 import 'package:soor_app/features/confirm_location/confirm_location_page.dart';
+import 'package:soor_app/features/notifications/notification_page.dart';
 import 'package:soor_app/features/orders/order_details_page.dart';
 import 'package:soor_app/features/orders/order_review_page.dart';
 import 'package:soor_app/features/orders/widget/success_order_page.dart';
@@ -52,6 +53,10 @@ class AppRouter {
       GoRoute(
         path: RoutesName.signUp,
         builder: (context, state) => const SignupPage(),
+      ),
+      GoRoute(
+        path: RoutesName.notification,
+        builder: (context, state) => const NotificationPage(),
       ),
       GoRoute(
         path: RoutesName.orderSuccess,
