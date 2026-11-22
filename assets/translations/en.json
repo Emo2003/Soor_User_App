@@ -186,5 +186,8 @@
   "safety_and_trust": "Safety and Trust",
   "overall_satisfaction": "Overall Satisfaction",
   "rating_submitted_successfully": "Your rating has been submitted successfully",
-  "hours": "Hours"
+  "hours": "Hours",
+  "notifications": "Notifications",
+  "today": "Today",
+  "yesterday": "Yesterday"
 }
