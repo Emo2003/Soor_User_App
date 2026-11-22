@@ -13,10 +13,12 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await EasyLocalization.ensureInitialized();
+
   Future.wait([
     PushNotificationServices.init(),
     LocalNotificationServices.init(),
   ]);
+
   runApp(
     EasyLocalization(
       supportedLocales: [Locale('en'), Locale('ar')],
