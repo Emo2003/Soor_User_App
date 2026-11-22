@@ -7,13 +7,16 @@ import 'package:soor_app/core/themes/color_manager.dart';
 import 'package:soor_app/firebase_options.dart';
 
 import 'core/routes/routes.dart';
-import 'core/services/notification_services.dart';
+import 'core/services/push_notification_services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await EasyLocalization.ensureInitialized();
-  Future.wait([NotificationServices.init(), LocalNotificationServices.init()]);
+  Future.wait([
+    PushNotificationServices.init(),
+    LocalNotificationServices.init(),
+  ]);
   runApp(
     EasyLocalization(
       supportedLocales: [Locale('en'), Locale('ar')],
