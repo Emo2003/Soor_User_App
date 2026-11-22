@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "653495285288",
+    "project_id": "soor-userapp",
+    "storage_bucket": "soor-userapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653495285288:android:86b2edf0ec2fc63368a71d",
+        "android_client_info": {
+          "package_name": "com.example.soor_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzh3kwbpMIBv9U4CVleNMyOG6G0Yr7SX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
