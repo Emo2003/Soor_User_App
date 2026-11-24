@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:http/http.dart' as http;
 import 'package:soor_app/core/themes/color_manager.dart';
 
 class LocalNotificationServices {
@@ -27,16 +28,34 @@ class LocalNotificationServices {
   }
 
   static Future<void> showNotification(RemoteMessage message) async {
-    NotificationDetails notificationDetails = NotificationDetails(
+    final imageUrl =
+        message.notification?.android?.imageUrl ??
+        message.notification?.apple?.imageUrl;
+
+    StyleInformation? style;
+    if (imageUrl != null) {
+      try {
+        final res = await http.get(Uri.parse(imageUrl));
+        if (res.statusCode == 200) {
+          final bitmap = ByteArrayAndroidBitmap(res.bodyBytes);
+          style = BigPictureStyleInformation(bitmap, largeIcon: bitmap);
+        }
+      } catch (_) {}
+    }
+
+    final notificationDetails = NotificationDetails(
       android: AndroidNotificationDetails(
-        '0',
-        'SoorNotification',
+        "channel_id",
+        "channel_name",
         importance: Importance.max,
         priority: Priority.high,
         color: ColorManager.yellow,
+        styleInformation: style,
+        sound: const RawResourceAndroidNotificationSound('notification_sound'),
       ),
-      iOS: DarwinNotificationDetails(),
+      iOS: const DarwinNotificationDetails(),
     );
+
     await flutterLocalNotificationsPlugin.show(
       id: 0,
       title: message.notification?.title ?? 'Title',
