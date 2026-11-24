@@ -3,18 +3,24 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:soor_app/core/services/local_notification_services.dart';
 
 class PushNotificationServices {
-
   static FirebaseMessaging message = FirebaseMessaging.instance;
 
   static Future init() async {
     await message.requestPermission();
-      String? token = await message.getToken();
-      print('Firebase Messaging Token: $token');
+    final token =await message.getToken().then((value) {
+      showNotification(value!);
+    });
+    print("firebase :$token");
     FirebaseMessaging.onBackgroundMessage(handlerOnBackgroundMessage);
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-    LocalNotificationServices.showNotification(message);
+      LocalNotificationServices.showNotification(message);
+    });
+    message.onTokenRefresh.listen((value) {
+      showNotification(value);
     });
   }
+
+  static void showNotification(String token) {}
 
   static Future<void> handlerOnBackgroundMessage(RemoteMessage message) async {
     await Firebase.initializeApp();

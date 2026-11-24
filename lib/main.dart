@@ -7,6 +7,7 @@ import 'package:soor_app/core/themes/color_manager.dart';
 import 'package:soor_app/firebase_options.dart';
 
 import 'core/routes/routes.dart';
+import 'core/services/one_signal_services.dart';
 import 'core/services/push_notification_services.dart';
 
 void main() async {
@@ -18,7 +19,7 @@ void main() async {
     PushNotificationServices.init(),
     LocalNotificationServices.init(),
   ]);
-
+  await OneSignalServices.init();
   runApp(
     EasyLocalization(
       supportedLocales: [Locale('en'), Locale('ar')],
